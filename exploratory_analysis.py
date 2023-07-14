@@ -17,7 +17,7 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_colwidth', None)
 
 # Read the data from a CSV file
-df = pd.read_csv('./output_data2/cleaned_data_perPixel.csv')
+df = pd.read_csv('./output_data/cleaned_data_perPixel.csv')
 
 # Group the data by various time-related columns and calculate the median
 df = df.groupby(['date', 'year', 'month', 'day', 'weekNumber', 'daysInMonth', 'halfOfMonth'], as_index=False).median()
