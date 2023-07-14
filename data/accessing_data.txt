@@ -1,0 +1,3 @@
+The dataset with the NDVI per pixel can be found here:
+https://drive.google.com/drive/folders/1KLb-TUgj9FVv82L2iKWtvwb5rgSDklyq?usp=sharing 
+ 
