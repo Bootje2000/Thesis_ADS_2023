@@ -56,11 +56,11 @@ for pixel_id, data_pixel_id in df_cluster.groupby('pixel_id'):
             data_year = data_year[['date','median']].copy()
             data_year = data_year.set_index('date')
 
-            # Check if there are enough data points (adjust the value as needed)
-            if data_year.shape[0] >= 6:
+            # Check if there are enough data points 
+            if data_year.shape[0] >= 5:
                 try:
                     # Apply Seasonal Mann-Kendall test for the specific months across each year
-                    trend, h, p, z, Tau, s, var_s, slope, intercept = mk.seasonal_test(data_year, period=6, alpha=0.5)
+                    trend, h, p, z, Tau, s, var_s, slope, intercept = mk.seasonal_test(data_year, period=5, alpha=0.5)
 
                     # Append the slope, trend, z-value, and p-value to the slope_values list
                     slope_values.append([pixel_id, cluster, slope, trend, z, p])
