@@ -33,8 +33,6 @@ df = df[['date','year','month','day','weekNumber', 'median','pixel_id']].copy()
 df = df[df['year'] <= 2020]
 df = df[df['year'] != 1984]
 
-# Only keep records for months February through July
-
 # Initialize lists to store slope and intercept values
 slope_values = []
 intercept_values = []
@@ -48,11 +46,10 @@ for pixel_id, data_pixel_id in df.groupby('pixel_id'):
             data_year = data_year[['date','median']].copy()
             data_year = data_year.set_index('date')
 
-            # Check if there are enough data points (adjust the value as needed)
-            if data_year.shape[0] >= 6:
+            if data_year.shape[0] >= 5:
                 try:
                     # Apply Seasonal Mann-Kendall test for the specific months across each year
-                    trend, h, p, z, Tau, s, var_s, slope, intercept = mk.seasonal_test(data_year, period=6, alpha=0.5)
+                    trend, h, p, z, Tau, s, var_s, slope, intercept = mk.seasonal_test(data_year, period=5, alpha=0.5)
 
                     # Append the slope, trend, z-value, and p-value to the slope_values list
                     slope_values.append([pixel_id, year, slope, trend, z, p])
