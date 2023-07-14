@@ -1,2 +1,2 @@
-# Thesis_ADS_2023
-Code
+Blooming Period of Trees in Gargano National Park
+This repository contains the code and data for a master's thesis that focuses on studying the blooming period of trees in the Gargano National Park in Italy. The research aims to investigate whether there has been a shift in the period of trees turning green and if this change can be detected using satellite imagery, specifically the Normalized Difference Vegetation Index (NDVI).
